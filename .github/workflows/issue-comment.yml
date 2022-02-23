@@ -1,0 +1,13 @@
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  debug:
+    name: debug
+    runs-on: ubuntu-latest
+    steps:
+    - name: debug
+      run: |
+        cat "$GITHUB_EVENT_PATH";
+        env;
